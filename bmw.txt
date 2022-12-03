@@ -1,0 +1,2 @@
+Comfort=15000
+Luxury=20000
