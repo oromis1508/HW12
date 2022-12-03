@@ -1,5 +1,5 @@
-import { Car } from "./car";
-import { FuelCost } from "./fuel-cost";
+import { Car } from "../base/car";
+import { FuelCost } from "../cash-items/fuel-cost";
 
 enum AudiComplectation {
     Basic = 'Bas', Extended = 'Ext'

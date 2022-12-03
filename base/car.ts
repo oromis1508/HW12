@@ -1,6 +1,7 @@
-import { Bills } from './bills';
-import { FuelCost } from './fuel-cost';
+import { Bills } from '../cash-items/bills';
+import { FuelCost } from '../cash-items/fuel-cost';
 import { readFileSync } from 'fs';
+
 export abstract class Car<ComplectationType extends string> {
     protected readonly abstract volume: number;
     protected readonly abstract consumption: number;
@@ -32,7 +33,7 @@ export abstract class Car<ComplectationType extends string> {
     }
 
     public getCost(complectation: ComplectationType) {
-        const complArray = readFileSync(this.carName + '.txt').toLocaleString().split('\n');
+        const complArray = readFileSync('prices/' + this.carName + '.txt').toLocaleString().split('\n');
         const complInfo = complArray.find(item => item.includes(complectation));
         if(!complInfo) {
             console.log(`${this.carName} with ${complectation} complectation is not available`);
